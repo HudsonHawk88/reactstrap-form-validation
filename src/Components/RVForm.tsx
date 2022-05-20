@@ -1,5 +1,5 @@
 import { FC, ReactElement, ChangeEvent, useState } from 'react';
-import { Form, Input, FormGroup, FormFeedback, FormProps, InputProps, FormGroupProps, FormFeedbackProps } from 'reactstrap';
+import { Form, Input, FormGroup, FormFeedback, FormProps, InputProps, InputGroup, InputGroupProps, FormGroupProps, FormFeedbackProps } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, onSubmit, ...rest }): ReactElement => {
@@ -7,6 +7,14 @@ const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, onSubm
         <Form className={className} onSubmit={onSubmit} {...rest}>
             {children}
         </Form>
+    );
+};
+
+const RVInputGroup: FC<InputGroupProps> = ({ className = 'reactstrap-form-inputgroup', children, ...rest }): ReactElement => {
+    return (
+        <InputGroup className={className} {...rest}>
+            {children}
+        </InputGroup>
     );
 };
 
@@ -57,4 +65,15 @@ const RVInput: FC<InputProps> = ({
     );
 };
 
-export { RVForm, RVFormGroup, RVInput, RVFormFeedback, FormProps as RVFormProps, InputProps as RVInputProps, FormGroupProps as RVFormGroupProps, FormFeedbackProps as RVFormFeedbackProps };
+export {
+    RVForm,
+    RVFormGroup,
+    RVInput,
+    RVInputGroup,
+    RVFormFeedback,
+    FormProps as RVFormProps,
+    InputProps as RVInputProps,
+    InputGroupProps as RVInputgroupProps,
+    FormGroupProps as RVFormGroupProps,
+    FormFeedbackProps as RVFormFeedbackProps
+};
