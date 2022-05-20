@@ -11,6 +11,7 @@
         "type": "git",
         "url": "https://github.com/HudsonHawk88/reactstrap-form-validation"
     },
+    "license": "MIT",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "files": [
