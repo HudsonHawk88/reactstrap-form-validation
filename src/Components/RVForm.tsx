@@ -64,10 +64,18 @@ const RVInput: FC<InputProps> = ({
     const [isValid, setIsValid] = useState(true);
 
     const validate = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.value === '') {
-            setIsValid(false);
+        if (e.target.type === 'checkbox') {
+            if (e.target.checked === false) {
+                setIsValid(false);
+            } else {
+                setIsValid(true);
+            }
         } else {
-            setIsValid(true);
+            if (e.target.value === '') {
+                setIsValid(false);
+            } else {
+                setIsValid(true);
+            }
         }
     };
 
