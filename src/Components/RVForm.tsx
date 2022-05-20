@@ -1,10 +1,28 @@
-import { FC, ReactElement, ChangeEvent, useState } from 'react';
+import { FC, ReactElement, ChangeEvent, FormEvent, useState } from 'react';
 import { Form, Input, FormGroup, FormFeedback, FormProps, InputProps, InputGroup, InputGroupProps, FormGroupProps, FormFeedbackProps } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, onSubmit, ...rest }): ReactElement => {
+const validateForm = (e: any, submitFn: Function) => {
+    const { target } = e;
+    const isFormValid = target.checkValidity();
+    if (isFormValid) {
+        submitFn(e);
+    }
+};
+
+const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, noValidate, onSubmit = () => {}, ...rest }): ReactElement => {
     return (
-        <Form className={className} onSubmit={onSubmit} {...rest}>
+        <Form
+            className={className}
+            onSubmit={(e: FormEvent<HTMLFormElement>) => {
+                if (noValidate) {
+                    validateForm(e, onSubmit);
+                } else {
+                    onSubmit(e);
+                }
+            }}
+            {...rest}
+        >
             {children}
         </Form>
     );
