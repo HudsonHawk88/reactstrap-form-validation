@@ -10,10 +10,11 @@ const validateForm = (e: any, submitFn: Function) => {
     }
 };
 
-const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, noValidate, onSubmit = () => {}, ...rest }): ReactElement => {
+const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, noValidate = false, onSubmit = () => {}, ...rest }): ReactElement => {
     return (
         <Form
             className={className}
+            noValidate={noValidate}
             onSubmit={(e: FormEvent<HTMLFormElement>) => {
                 if (noValidate) {
                     validateForm(e, onSubmit);
