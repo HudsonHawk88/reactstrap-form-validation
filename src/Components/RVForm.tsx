@@ -17,6 +17,7 @@ const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, noVali
             noValidate={noValidate}
             onSubmit={(e: FormEvent<HTMLFormElement>) => {
                 if (noValidate) {
+                    e.preventDefault();
                     validateForm(e, onSubmit);
                 } else {
                     onSubmit(e);
