@@ -57,4 +57,4 @@ const RVInput: FC<InputProps> = ({
     );
 };
 
-export { RVForm, RVFormGroup, RVInput, RVFormFeedback };
+export { RVForm, RVFormGroup, RVInput, RVFormFeedback, FormProps as RVFormProps, InputProps as RVInputProps, FormGroupProps as RVFormGroupProps, FormFeedbackProps as RVFormFeedbackProps };
