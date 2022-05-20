@@ -2,6 +2,20 @@
     "name": "@inftechsol/reactstrap-form-validation",
     "version": "0.1.0",
     "private": false,
+    "author": {
+        "name": "Gergő Tóth",
+        "email": "info@inftechsol.hu",
+        "url": "https://inftechsol.hu"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HudsonHawk88/reactstrap-form-validation"
+    },
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
     "dependencies": {
         "@testing-library/jest-dom": "5.16.4",
         "@testing-library/react": "13.2.0",
