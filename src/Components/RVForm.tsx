@@ -2,9 +2,9 @@ import { FC, ReactElement, ChangeEvent, useState } from 'react';
 import { Form, Input, FormGroup, FormFeedback, FormProps, InputProps, FormGroupProps, FormFeedbackProps } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, onSubmitForm, ...rest }): ReactElement => {
+const RVForm: FC<FormProps> = ({ className = 'reactstrap-form', children, onSubmit, ...rest }): ReactElement => {
     return (
-        <Form className={className} {...rest}>
+        <Form className={className} onSubmit={onSubmit} {...rest}>
             {children}
         </Form>
     );

@@ -51,7 +51,7 @@ const App = () => {
 
     return (
         <div style={style}>
-            <RVForm onSubmitForm={onSubmit}>
+            <RVForm onSubmit={onSubmit}>
                 <RVFormGroup>
                     <Label>Address:</Label>
                     <RVInput required name="address" value={obj.address} onChange={handleInputChange} />
@@ -67,7 +67,7 @@ const App = () => {
                     <RVInput required type="number" name="age" value={obj.age} onChange={handleInputChange} />
                     <RVFormFeedback>This field is required!</RVFormFeedback>
                 </RVFormGroup>
-                <Button type="submit">Elküld</Button>
+                <Button type="submit">Send</Button>
             </RVForm>
         </div>
     );
@@ -78,5 +78,5 @@ export default App;
 
 ## Properties
 
-All comes from reactstrap Forms and Inputs except RVForm onSubmitFrom. See [Reactstrap form and input props](https://reactstrap.github.io/?path=/docs/components-forms--props 'React v18.1.0') -
-RVForm - onSubmitForm: function required
+All comes from reactstrap Forms and Inputs except RVForm onSubmitFrom. See
+[Reactstrap form and input props](https://reactstrap.github.io/?path=/docs/components-forms--props 'Reactstrap Form and input props')
