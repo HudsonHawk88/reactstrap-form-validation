@@ -18,7 +18,7 @@ const RVFormGroup: FC<FormGroupProps> = ({ className = 'reactstrap-form-group', 
     );
 };
 
-const RVFormFeedback: FC<FormFeedbackProps> = ({ className = 'reactstrap-form-feedback', children, ...rest }): ReactElement => {
+const RVFormFeedback: FC<FormFeedbackProps> = ({ className = 'reactstrap-form-feedback', children = 'A mező kitöltése kötelező!', ...rest }): ReactElement => {
     return (
         <FormFeedback className={className} {...rest}>
             {children}
