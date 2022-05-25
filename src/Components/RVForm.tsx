@@ -1,5 +1,20 @@
 import { FC, ReactElement, ChangeEvent, FormEvent, useState } from 'react';
-import { Form, Input, FormGroup, FormFeedback, FormProps, InputProps, InputGroup, InputGroupProps, FormGroupProps, FormFeedbackProps } from 'reactstrap';
+import {
+    Form,
+    Input,
+    FormGroup,
+    FormFeedback,
+    FormProps,
+    InputProps,
+    InputGroup,
+    InputGroupText,
+    InputGroupProps,
+    InputGroupTextProps,
+    FormGroupProps,
+    FormFeedbackProps,
+    FormText,
+    FormTextProps
+} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const validateForm = (e: any, submitFn: Function) => {
@@ -38,11 +53,27 @@ const RVInputGroup: FC<InputGroupProps> = ({ className = 'reactstrap-form-inputg
     );
 };
 
+const RVInputGroupText: FC<InputGroupTextProps> = ({ className = 'reactstrap-form-inputgroup-text', children, ...rest }): ReactElement => {
+    return (
+        <InputGroupText className={className} {...rest}>
+            {children}
+        </InputGroupText>
+    );
+};
+
 const RVFormGroup: FC<FormGroupProps> = ({ className = 'reactstrap-form-group', children, ...rest }): ReactElement => {
     return (
         <FormGroup className={className} {...rest}>
             {children}
         </FormGroup>
+    );
+};
+
+const RVFormText: FC<FormTextProps> = ({ className = 'reactstrap-form-text', children, ...rest }): ReactElement => {
+    return (
+        <FormText className={className} {...rest}>
+            {children}
+        </FormText>
     );
 };
 
@@ -98,10 +129,14 @@ export {
     RVFormGroup,
     RVInput,
     RVInputGroup,
+    RVInputGroupText,
     RVFormFeedback,
+    RVFormText,
     FormProps as RVFormProps,
     InputProps as RVInputProps,
     InputGroupProps as RVInputgroupProps,
+    InputGroupTextProps as RVInputGroupTextProps,
     FormGroupProps as RVFormGroupProps,
-    FormFeedbackProps as RVFormFeedbackProps
+    FormFeedbackProps as RVFormFeedbackProps,
+    FormTextProps as RVFormTextProps
 };
