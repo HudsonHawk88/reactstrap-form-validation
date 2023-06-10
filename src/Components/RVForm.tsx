@@ -20,7 +20,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const validateForm = (e: any, submitFn: Function) => {
     const { target } = e;
     const isFormValid = target.checkValidity();
-    console.log('isFormValid: ', isFormValid);
     if (isFormValid) {
         submitFn(e);
     }
@@ -88,13 +87,7 @@ const RVFormFeedback: FC<FormFeedbackProps> = ({ className = 'reactstrap-form-fe
     );
 };
 
-const RVInput: FC<InputProps> = ({
-    className = 'reactstrap-form-input',
-    onChange = () => {
-        console.log('...');
-    },
-    ...rest
-}): ReactElement => {
+const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange = () => {}, ...rest }): ReactElement => {
     const [isValid, setIsValid] = useState(true);
 
     const validate = (e: ChangeEvent<HTMLInputElement>) => {
