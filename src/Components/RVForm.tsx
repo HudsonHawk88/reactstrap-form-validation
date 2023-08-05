@@ -91,14 +91,14 @@ const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange
     const [isValid, setIsValid] = useState(true);
 
     const validate = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.type === 'checkbox') {
+        if (e.target.type === 'checkbox' && e.target.required) {
             if (e.target.checked === false) {
                 setIsValid(false);
             } else {
                 setIsValid(true);
             }
         } else {
-            if (e.target.value === '') {
+            if (e.target.value === '' && e.target.required) {
                 setIsValid(false);
             } else {
                 setIsValid(true);
