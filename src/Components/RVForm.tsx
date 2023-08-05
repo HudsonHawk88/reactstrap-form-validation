@@ -17,7 +17,7 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const validateForm = (e: any, submitFn: Function) => {
+export const validateForm = (e: any, submitFn: Function) => {
     const { target } = e;
     const isFormValid = target.checkValidity();
     if (isFormValid) {
