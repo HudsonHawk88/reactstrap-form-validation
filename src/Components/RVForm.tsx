@@ -15,7 +15,6 @@ import {
     FormText,
     FormTextProps
 } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const validateForm = (e: any, submitFn: Function) => {
     const { target } = e;
