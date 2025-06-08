@@ -111,7 +111,7 @@ const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange
                 if (pattern && new RegExp(pattern).test(e.target.value)) {
                     onChange(e);
                     validate(e);
-                } else {
+                } else if (!pattern) {
                     onChange(e);
                     validate(e);
                 }
