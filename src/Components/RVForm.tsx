@@ -86,7 +86,7 @@ const RVFormFeedback: FC<FormFeedbackProps> = ({ className = 'reactstrap-form-fe
     );
 };
 
-const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange = () => {}, ...rest }): ReactElement => {
+const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange = () => {}, pattern, ...rest }): ReactElement => {
     const [isValid, setIsValid] = useState(true);
 
     const validate = (e: ChangeEvent<HTMLInputElement>) => {
@@ -108,8 +108,13 @@ const RVInput: FC<InputProps> = ({ className = 'reactstrap-form-input', onChange
     return (
         <Input
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                onChange(e);
-                validate(e);
+                if (pattern && new RegExp(pattern).test(e.target.value)) {
+                    onChange(e);
+                    validate(e);
+                } else {
+                    onChange(e);
+                    validate(e);
+                }
             }}
             onInvalid={(e: ChangeEvent<HTMLInputElement>) => validate(e)}
             invalid={!isValid}
